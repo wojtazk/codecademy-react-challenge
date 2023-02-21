@@ -6,7 +6,7 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/wojtazk/codecademy-react-challenge)
 ![Vercel](https://vercelbadge.vercel.app/api/wojtazk/codecademy-react-challenge)
 
-![GitHub forks](https://img.shields.io/github/forks/wojtazk/codecademy-react-challenge?logoColor=blue&style=social)  
+![GitHub forks](https://img.shields.io/github/forks/wojtazk/codecademy-react-challenge?logoColor=blue&style=social)
 ![GitHub Repo stars](https://img.shields.io/github/stars/wojtazk/codecademy-react-challenge?style=social)
 
 ---
