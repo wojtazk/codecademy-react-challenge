@@ -27,7 +27,10 @@ export const ContactsPage = ({ contacts, onAddContact }) => {
     )
       return;
 
-    onAddContact(name.trim(), phone, email.trim());
+    let phoneNum = phone;
+    if (phoneNum[0] !== '+') phoneNum = '+' + phoneNum;
+
+    onAddContact(name.trim(), phoneNum.replaceAll('-', ' '), email.trim());
 
     resetValues();
   };
@@ -57,7 +60,7 @@ export const ContactsPage = ({ contacts, onAddContact }) => {
       <hr />
       <section>
         <h2>Contacts</h2>
-        <TileList contacts={contacts} />
+        <TileList list={contacts} />
       </section>
     </div>
   );
