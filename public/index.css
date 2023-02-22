@@ -1,6 +1,6 @@
 #root {
   padding: 30px;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 nav > a {
@@ -30,16 +30,13 @@ h2 {
   margin-bottom: 18px;
 }
 
-section {
-}
-
 hr {
   border: none;
   border-top: 1px solid #979797;
   margin: 20px 0;
 }
 
-input[type="submit"] {
+input[type='submit'] {
   background: #03a8d8;
   border-radius: 4px;
   color: #ffffff;
@@ -49,14 +46,14 @@ input[type="submit"] {
   outline: none;
   padding: 10px 0;
   width: 100%;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   margin-top: 10px;
   margin-bottom: 0px;
 }
 
 input,
 select {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   background: #ffffff;
   border: 1px solid #979797;
   border-radius: 4px;
@@ -73,10 +70,12 @@ select {
   margin-bottom: 4px;
 }
 
-.tile.tile-title {
+/* .tile, */
+.tile-title {
   font-weight: bold;
 }
 
 .tile-container {
-  margin-bottom: 20px;
+  border-bottom: 2px solid black;
+  margin-bottom: 30px;
 }
