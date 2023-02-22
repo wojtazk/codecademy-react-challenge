@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { ContactForm } from '../../components/contactForm/ContactForm';
 
 export const ContactsPage = ({ contacts, onAddContact }) => {
   const [name, setName] = useState('');
@@ -24,6 +25,15 @@ export const ContactsPage = ({ contacts, onAddContact }) => {
     <div>
       <section>
         <h2>Add Contact</h2>
+        <ContactForm
+          name={name}
+          setName={setName}
+          phone={phone}
+          setPhone={setPhone}
+          email={email}
+          setEmail={setEmail}
+          handleSubmit={handleSubmit}
+        />
       </section>
       <hr />
       <section>
