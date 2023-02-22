@@ -38,10 +38,13 @@ function App() {
             <Redirect to={ROUTES.CONTACTS} />
           </Route>
           <Route path={ROUTES.CONTACTS}>
-            <ContactsPage contacts={contacts} />
+            <ContactsPage contacts={contacts} onAddContact={addContact} />
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
-            <AppointmentsPage appointments={appointments} />
+            <AppointmentsPage
+              appointments={appointments}
+              onAddAppointment={addAppointment}
+            />
           </Route>
         </Switch>
       </main>
