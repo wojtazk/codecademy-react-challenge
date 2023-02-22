@@ -13,10 +13,14 @@ function App() {
     APPOINTMENTS: '/appointments',
   };
 
-  /*
-  Implement functions to add data to
-  contacts and appointments
-  */
+  const addContact = (name, phoneNumber, email) => {
+    setContacts((contacts) => contacts.push({ name, phoneNumber, email }));
+  };
+  const addAppointment = (contact, date, time) => {
+    setAppointments((appointments) =>
+      appointments.push({ contact, date, time })
+    );
+  };
 
   return (
     <>
@@ -34,12 +38,10 @@ function App() {
             <Redirect to={ROUTES.CONTACTS} />
           </Route>
           <Route path={ROUTES.CONTACTS}>
-            {/* Add props to ContactsPage */}
-            <ContactsPage />
+            <ContactsPage contacts={contacts} />
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
-            {/* Add props to AppointmentsPage */}
-            <AppointmentsPage />
+            <AppointmentsPage appointments={appointments} />
           </Route>
         </Switch>
       </main>
