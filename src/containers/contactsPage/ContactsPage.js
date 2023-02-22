@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 export const ContactsPage = ({ contacts, onAddContact }) => {
   const [name, setName] = useState('');
@@ -14,10 +14,11 @@ export const ContactsPage = ({ contacts, onAddContact }) => {
     e.target.reset();
   };
 
-  /*
-  Using hooks, check for contact name in the 
-  contacts array variable in props
-  */
+  useEffect(() => {
+    // check if a new contact name would be a duplicate
+    const duplicate = contacts.some((contact) => contact.name === name);
+    setIsDuplicate(duplicate);
+  }, [name]);
 
   return (
     <div>
