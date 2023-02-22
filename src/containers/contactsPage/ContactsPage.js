@@ -8,10 +8,10 @@ export const ContactsPage = ({ contacts, onAddContact }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    /*
-    Add contact info and clear data
-    if the contact name is not a duplicate
-    */
+    if (isDuplicate) return;
+
+    onAddContact(name, phone, email);
+    e.target.reset();
   };
 
   /*
