@@ -6,17 +6,35 @@ export const ContactsPage = ({ contacts, onAddContact }) => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
-  const [isDuplicate, setIsDuplicate] = useState(false);
+  const [isDuplicate, setIsDuplicate] = useState(true);
+
+  const resetValues = () => {
+    setName('');
+    setPhone('');
+    setEmail('');
+    setIsDuplicate(true);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isDuplicate) return;
+    if (!name || !phone) return; // name or phone is falsy
+    if (
+      // if phone does not match regexp
+      !new RegExp(
+        '[+]?[0-9]{2}[ -]{1}[0-9]{3}[ -]{1}[0-9]{3}[ -]{1}[0-9]{3}'
+      ).test(phone)
+    )
+      return;
 
-    onAddContact(name, phone, email);
-    e.target.reset();
+    onAddContact(name.trim(), phone, email.trim());
+
+    resetValues();
   };
 
   useEffect(() => {
+    if (!name) return;
+
     // check if a new contact name would be a duplicate
     const duplicate = contacts.some((contact) => contact.name === name);
     setIsDuplicate(duplicate);
