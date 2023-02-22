@@ -20,7 +20,7 @@ export const ContactsPage = ({ contacts, onAddContact }) => {
     // check if a new contact name would be a duplicate
     const duplicate = contacts.some((contact) => contact.name === name);
     setIsDuplicate(duplicate);
-  }, [name]);
+  }, [contacts, name]);
 
   return (
     <div>
