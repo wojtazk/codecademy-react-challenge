@@ -5,8 +5,8 @@ import { AppointmentsPage } from './containers/appointmentsPage/AppointmentsPage
 import { ContactsPage } from './containers/contactsPage/ContactsPage';
 
 function App() {
-  const [contacts, setContacts] = useState([{}]);
-  const [appointments, setAppointments] = useState([{}]);
+  const [contacts, setContacts] = useState([]);
+  const [appointments, setAppointments] = useState([]);
 
   const ROUTES = {
     CONTACTS: '/contacts',
@@ -14,12 +14,13 @@ function App() {
   };
 
   const addContact = (name, phoneNumber, email) => {
-    setContacts((contacts) => contacts.push({ name, phoneNumber, email }));
+    setContacts((contacts) => [...contacts, { name, phoneNumber, email }]);
   };
   const addAppointment = (contact, date, time) => {
-    setAppointments((appointments) =>
-      appointments.push({ contact, date, time })
-    );
+    setAppointments((appointments) => [
+      ...appointments,
+      { contact, date, time },
+    ]);
   };
 
   return (
