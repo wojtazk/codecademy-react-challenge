@@ -9,14 +9,14 @@ export const AppointmentsPage = ({
 }) => {
   const [title, setTitle] = useState('');
   const [contact, setContact] = useState('');
-  const [date, setDate] = useState(null);
-  const [time, setTime] = useState(null);
+  const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
 
   const resetValues = () => {
     setTitle('');
     setContact('');
-    setDate(null);
-    setTime(null);
+    setDate('');
+    setTime('');
   };
 
   const handleSubmit = (e) => {
@@ -41,6 +41,7 @@ export const AppointmentsPage = ({
           setDate={setDate}
           time={time}
           setTime={setTime}
+          contacts={contacts}
           handleSubmit={handleSubmit}
         />
       </section>

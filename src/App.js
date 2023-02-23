@@ -16,10 +16,10 @@ function App() {
   const addContact = (name, phoneNumber, email) => {
     setContacts((contacts) => [...contacts, { name, phoneNumber, email }]);
   };
-  const addAppointment = (contact, date, time) => {
+  const addAppointment = (title, contact, date, time) => {
     setAppointments((appointments) => [
       ...appointments,
-      { contact, date, time },
+      { title, contact, date, time },
     ]);
   };
 
@@ -44,6 +44,7 @@ function App() {
           <Route path={ROUTES.APPOINTMENTS}>
             <AppointmentsPage
               appointments={appointments}
+              contacts={contacts}
               onAddAppointment={addAppointment}
             />
           </Route>
